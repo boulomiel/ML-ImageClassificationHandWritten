@@ -48,14 +48,17 @@ def main() -> int:
     plt.plot(train_loss_history, 'r')
     plt.plot(val_loss_history, 'b')
     plt.title("Loss Curve")
+    plt.show()
 
     plt.subplot(122)
     plt.plot(train_acc_history, 'r')
     plt.plot(val_acc_history, 'b')
     plt.title("Accuracy Curve")
+    plt.show()
 
     images, labels = next(iter(dataset_loader.validation_loader))
     plt.imshow(images[0][0], 'gray')
+    plt.show()
 
     images.resize_(images.shape[0], 1, 784)
     score = model(images[0, :])
